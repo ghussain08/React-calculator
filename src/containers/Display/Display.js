@@ -1,23 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Display.css';
 
-class Display extends Component{
-    componentDidMount(){
-        console.log('[DISPLAY] MOUNTED');
+const Display =(props)=>{
+    let expression= (props.expression.length) ? props.expression.join(' '):'';
+    let total=props.total;
+    if(this.props.error){
+        total=props.error
     }
-    render(){
-        // console.log(this.props.expression);
-        let expression= (this.props.expression.length) ? this.props.expression.join(' '):'';
-        let total=this.props.total;
-        if(this.props.error){
-            total=this.props.error
-        }
-        return(
-            <div className="Display">
-                <p className="Expression">{expression}</p>
-                <p className="Result">{total}</p>
-            </div>
-        )
-    }
+    return(
+        <div className="Display">
+            <p className="Expression">{expression}</p>
+            <p className="Result">{total}</p>
+        </div>
+    )
 }
 export default Display;

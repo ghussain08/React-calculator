@@ -4,7 +4,7 @@ import './Display.css';
 const Display =(props)=>{
     let expression= (props.expression.length) ? props.expression.join(' '):'';
     let total=props.total;
-    if(this.props.error){
+    if(props.error){
         total=props.error
     }
     return(

@@ -22,10 +22,9 @@ class Main extends Component{
         }
     }
     handleEqual=()=>{
-
         try{
             let expression = this.state.expression.join("");
-            let total =Mathjs.parse(expression).compile().eval().toFixed(3);
+            let total =Mathjs.parse(expression).compile().eval().toFixed(2);
             this.setState({total:total,error:null});
         }
         catch(err){

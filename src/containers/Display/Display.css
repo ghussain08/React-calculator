@@ -1,0 +1,17 @@
+.Display{
+    height: 200px;
+    background-color: whitesmoke;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+p.Expression,
+p.Result{
+    font-size: 22px;
+    text-align: right;
+    pointer-events: none;
+}
+p.Result{
+    font-size: 45px;
+}

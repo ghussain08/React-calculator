@@ -1,0 +1,26 @@
+.Button_container{
+    display: grid;
+    grid-template: repeat(5,60px) / repeat(4,1fr);
+}
+.Button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(30,35,38);
+    color: whitesmoke;
+    font-size: 20px;
+    font-weight: lighter;
+    transition: all .3s ease-in-out;
+}
+.Button:hover{
+    cursor: pointer;
+    color: rgb(30,35,38);
+    background-color: ghostwhite;
+}
+.action{
+    background-color: #4e51e2;
+}
+.equal{
+    background-color: yellow;
+    color: black;
+}

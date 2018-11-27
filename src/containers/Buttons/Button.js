@@ -8,7 +8,7 @@ const Button = (props)=>{
         classes = classes.join(" ");
     }
     return(
-        <div onClick={props.click} className= {classes}>
+        <div onClick={props.click} data-value={props.number} className= {classes}>
             <p>{props.number}</p>
         </div>
     )

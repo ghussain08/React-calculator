@@ -9,11 +9,11 @@ class Main extends Component{
         expression:[],
         error:null
     };
-    handleClick=(sign)=>{
-       this.updateExpression(sign);
+    handleClick=(e)=>{
+       this.updateExpression(e.target.getAttribute('data-value'));
     }
     handleReset=()=>{
-        this.setState({expression:[], total:''});
+        this.setState({expression:[], total:'',error:null});
     }
     handleRemove=()=>{
         if(this.state.expression.length){
@@ -33,8 +33,9 @@ class Main extends Component{
     }
 
     updateExpression=(item)=>{
-        let expression = this.state.expression.concat(item);
-        this.setState( {expression:expression});
+        this.setState((prevState)=>{
+           return {expression:prevState.expression.concat(item)}
+        });
     }
     render(){
         return(
@@ -44,21 +45,21 @@ class Main extends Component{
                     <Button click={this.handleReset}  number="C" />
                     <Button  number=" " />
                     <Button  number=" " />
-                    <Button click={()=>{this.handleClick('/')}} class="action" number="/" />
-                    <Button click={()=>{this.handleClick('7')}} number="7" />
-                    <Button click={()=>{this.handleClick('8')}} number="8" />
-                    <Button click={()=>{this.handleClick('9')}} number="9" />
-                    <Button click={()=>{this.handleClick('*')}} class="action" number="X" />
-                    <Button click={()=>{this.handleClick('4')}} number="4" />
-                    <Button click={()=>{this.handleClick('5')}} number="5" />
-                    <Button click={()=>{this.handleClick('6')}}  number="6" />
-                    <Button click={()=>{this.handleClick('-')}} class="action" number="-" />
-                    <Button click={()=>{this.handleClick('1')}}  number="1" />
-                    <Button click={()=>{this.handleClick('2')}}  number="2" />
-                    <Button click={()=>{this.handleClick('3')}}  number="3" />
-                    <Button click={()=>{this.handleClick('+')}} class="action" number="+" />
-                    <Button click={()=>{this.handleClick('0')}} number="0" />
-                    <Button click={()=>{this.handleClick('.')}} number="." />
+                    <Button click={this.handleClick} class="action" number="/" />
+                    <Button click={this.handleClick} number="7" />
+                    <Button click={this.handleClick} number="8" />
+                    <Button click={this.handleClick} number="9" />
+                    <Button click={this.handleClick} class="action" number="*" />
+                    <Button click={this.handleClick} number="4" />
+                    <Button click={this.handleClick} number="5" />
+                    <Button click={this.handleClick}  number="6" />
+                    <Button click={this.handleClick} class="action" number="-" />
+                    <Button click={this.handleClick}  number="1" />
+                    <Button click={this.handleClick}  number="2" />
+                    <Button click={this.handleClick}  number="3" />
+                    <Button click={this.handleClick} class="action" number="+" />
+                    <Button click={this.handleClick} number="0" />
+                    <Button click={this.handleClick} number="." />
                     <Button click={this.handleRemove} number="del" />
                     <Button click={this.handleEqual}  class="equal" number="=" />
                 </div>
